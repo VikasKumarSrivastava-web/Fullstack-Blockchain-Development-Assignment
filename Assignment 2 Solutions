@@ -1,0 +1,119 @@
+/**
+ 1. Write a Javascript function to check whether a triangle is equilateral,
+isosceles or scalene
+ */
+
+function typeOfTriangle(a, b, c) {
+  if (a === b && b === c) {
+    console.log("it is equilateral.");
+  } else if (a === b || b == c) {
+    console.log("it is isosceles.");
+  } else {
+    console.log("it is scalene.");
+  }
+}
+
+typeOfTriangle(7, 4, 4);
+
+/**
+2. Write a function using switch case to find the grade of a student based
+on marks obtained
+a. “S grade” if the marks are between 90 and 100.
+b. “A grade” if the marks are between 80 and 90.
+c. “B grade” if the marks are between 70 and 80.
+d. “C grade” if the marks are between 60 and 70.
+e. “D grade” if the marks are between 50 and 60.
+f. “E grade” if the marks are between 40 and 50.
+g. “Student has failed” if the marks are between 0 and 40.
+h. Else output “Invalid marks”.
+ */
+
+function studentGrade(marks) {
+  let grade = "";
+  switch (true) {
+    case marks > 90 && marks <= 100:
+      grade = "S grade";
+      break;
+    case marks > 80 && marks <= 90:
+      grade = "A grade";
+      break;
+    case marks > 70 && marks <= 80:
+      grade = "B grade";
+      break;
+    case marks > 60 && marks <= 70:
+      grade = "C grade";
+      break;
+    case marks > 50 && marks <= 60:
+      grade = "D grade";
+      break;
+    case marks >= 40 && marks <= 50:
+      grade = "E grade";
+      break;
+    case marks > 0 && marks < 40:
+      grade = "Student has failed";
+      break;
+    default:
+      grade = "Invalid marks";
+  }
+  return grade;
+}
+let ans = studentGrade(67);
+console.log(`Student grade is : ${ans}`);
+
+
+/**
+3. Write a JavaScript program to find the sum of the multiples of 3 and 5
+under 1000
+ */
+
+function sumOfMultiples() {
+  let count = 0;
+  let sum = 0;
+  while (count < 1000) {
+    if (count % 5 == 0 && count % 3 == 0) {
+      sum += count;
+    }
+    count += 1;
+  }
+  return sum;
+}
+
+console.log(sumOfMultiples());
+
+/**
+4. Write a program to find the factorial of all prime numbers between a
+given range . Range will be passed as 2 values in the function
+parameters. eg- if it is needed to find the values for numbers 1-100, then
+function declaration can look like - function prime(1,100).
+ */
+function fact(num) {
+  if (num == 0) {
+    return 1;
+  }
+  return num * fact(num - 1);
+}
+
+function prime(num1, num2) {
+  let factResult = 0;
+  let j = num1 === 1 ? 2 : num1;
+  while (j <= num2) {
+    let k = 2;
+    flag = false;
+    while (k < j) {
+      if (j % k === 0) {
+        flag = true;
+      }
+      k = k + 1;
+    }
+    if (!flag) {
+      factResult = fact(j);
+      console.log(factResult);
+    }
+    j = j + 1;
+  }
+}
+
+prime(1, 100);
+
+
+
