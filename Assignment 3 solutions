@@ -1,0 +1,93 @@
+/**  
+1. Using for loops, write a Javascript program to output the following
+pattern -
+1
+2 3
+4 5 6
+7 8 9 10 
+*/
+function pattern(n) {
+  let i = 1;
+  let p = "";
+  let count = 1;
+  while (i <= n) {
+    let j = 1;
+    while (j <= i) {
+      p = p + " " + count;
+      count += 1;
+      j = j + 1;
+    }
+    p += "\n";
+    i = i + 1;
+  }
+  console.log(p);
+}
+
+pattern(4);
+
+/**
+ 2. Write a program to find whether a given number is armstrong number or
+
+not-
+The Armstrong number is a number that is equal to the sum of cubes of
+
+its digits. For example 0, 1, 153, 370, 371 and 407 are the Armstrong
+numbers. Let's try to understand why 153 is an Armstrong number.
+153 = (1*1*1)+(5*5*5)+(3*3*3) where:
+(1*1*1)=1
+(5*5*5)=125
+(3*3*3)=27
+So:
+1+125+27=153
+ */
+function isArmstrong(num) {
+  let comp_num = num;
+  let cubeOfDigit = 0;
+  while (num != 0) {
+    digit = num % 10;
+    cubeOfDigit = cubeOfDigit + digit * digit * digit;
+    num = Math.trunc(num / 10);
+  }
+  if (comp_num === cubeOfDigit) return true;
+  else return false;
+}
+
+let ans = isArmstrong(153)
+  ? "its an armstrong number"
+  : "its not a armstrong number.";
+console.log(ans);
+
+
+/**
+ 3. Write a program to find whether a given number is special number or
+not-
+If the sum of the factorial of digits of a number (N) is equal to the
+number itself, the number (N) is called a special number.
+eg- 145 is a special number
+Logic- 1! + 4! + 5!= 1+24+120 i.e 14
+ */
+function fact(num) {
+  if (num == 0) {
+    return 1;
+  }
+  return num * fact(num - 1);
+}
+
+function isSpecialNumber(num) {
+  let num_comp = num;
+  let digit = 0;
+  let sum = 0;
+  while (num != 0) {
+    digit = num % 10;
+    sum = sum + fact(digit);
+    num = Math.trunc(num / 10);
+  }
+
+  if (num_comp == sum) return true;
+  else return false;
+}
+
+let ans = isSpecialNumber(145)
+  ? "its a special number."
+  : "its not a special number";
+console.log(ans);
