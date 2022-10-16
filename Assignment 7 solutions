@@ -1,0 +1,130 @@
+
+
+Note: Having issue with prompt in taking user input.
+
+// 1. Input a String S, and check its length and if the length is greater than 4,
+// truncate the input String and output the result -
+// Input: Ice Output: Ice
+// Input:Icecream Output:Icec...
+let Str1 = 'Icecream';//prompt("Enter the string");
+if (Str1.length > 4) {
+  console.log(Str1.substring(0, 4));
+} else {
+  console.log(Str1);
+}
+
+// 2. Input a String S with multiple words, and remove whitespaces and
+// output the result -
+// Input: “Hii Boy” Output: “HiiBoy”
+
+let S1 = "Hii Boy";//prompt("Enter the multiple strings");
+let str1 = S1.split(" ").join("");
+console.log(str1);
+
+// 3. Input a String S with two words, and replace first word with second word
+// and display the result -
+// Input: “Hii Boy” Output: “Boy Hii”
+
+let S = "Hii Boy";
+let str = S.split(" ");
+let s1 = str[0];
+let s2 = str[str.length - 1];
+str[0] = s2;
+str[str.length - 1] = s1;
+let s3 = str.join(" ");
+console.log(s3); //Boy Hii
+
+// 4. Input a String S with a word, and replace character “a” with “x” and
+// display the result -
+// Input: “apple” Output: “xpple”
+
+let str3 = "apple";
+let str4 = str3.replace("a", "x");
+console.log(str4);
+
+// 5. What string method can be used to convert string into array ?
+Ans) We can use split method to convert a string into Array. 
+For e.g:
+let str = "apple mango pineapple guava";
+let str7 = str.split(" ")
+console.log(str7)
+output -> [ 'apple', 'mango', 'pineapple', 'guava' ]
+
+// 6. What string method can be used to check the occurrence of a specified
+// text in a string?
+Ans) We can use match method to check the occurrence of a specified text in a string.
+for e.g
+let temp = "Welcome to JS and welcome to React JS";
+let count = (temp.match(/to/g) || []).length;
+console.log(count);
+output-> 2
+
+// 7. How can you break a string to a newline in Javascript ?
+Ans) we can break a string to a newline using the combination of split and join method.
+for e.g
+let temp = "Welcome to JS welcome to React JS";
+let str = temp.split(' ').join('\n');
+console.log(str);
+
+// 8. Write a Javascript function to test whether the first character of a string
+// is lowercase.
+Ans)
+function f1(str){
+  if (str[0]===str[0].toLowerCase()){
+      console.log('first character is a lower case')
+  }
+  else{
+      console.log('not lowercase')
+  }
+}
+f1('tHIS is A STRing');
+//output-> first character is a lower case
+
+// 9. Give a correct verdict to users input if he enters "yes", "YES","Yes" ,etc
+// (any combination) using string methods.
+// How will you handle that ?
+Ans) I will handle that my converting the user input to either Upper Case ('YES') or Lower Case('yes').
+In that way i can easily compare the user input with desired result and give correct verdict.
+
+// 10. Given a String S, achieve following tasks
+// a) Convert the String into upper case.
+let str = 'hello';
+let upperCase = str.toUpperCase();
+console.log(upperCase); //HELLO
+
+// b) Convert only the first character to uppercase.
+let str = 'hello';
+let upperCase = str[0].toUpperCase() + str.substring(1,str.length);
+console.log(upperCase);//Hello
+
+// c) Convert the String into lower case.
+let str = 'HELLO';
+let lowerCase = str.toLowerCase();
+console.log(lowerCase); //hello
+
+// d) Break the string into two halves and swap them.
+let S = "Hi Boy";
+let str = S.split(" ");
+let s1 = str[0];
+let s2 = str[str.length - 1];
+str[0] = s2;
+str[str.length - 1] = s1;
+let s3 = str.join(" ");
+console.log(s3); //Boy Hii
+
+// e) Count the repeating characters.
+let temp = "Welcome to JS and welcome to React JS";
+let count = (temp.match(/to/g) || []).length;
+console.log(count); //2
+
+// f) Reverse the string
+
+function reverseStr(str) {
+  var splitStr = str.split(""); 
+  var revArray = splitStr.reverse(); 
+  var result = revArray.join(""); 
+  return result;
+}
+
+let ans = reverseStr("hello");
+console.log(ans);
